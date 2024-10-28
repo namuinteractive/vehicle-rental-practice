@@ -3,6 +3,8 @@ package co.edu.uniquindio.poo.model;
 public class Moto extends Vehiculo{
 
     private boolean cajaAutomatica;
+    private double tarifaBase;
+    private double tarifaAdicional;
 
     public Moto(String matricula, String marca, String modelo, int añoFabricacion, boolean cajaAutomatica) {
         super(matricula, marca, modelo, añoFabricacion);
@@ -19,7 +21,9 @@ public class Moto extends Vehiculo{
 
     public double calcularCostoReserva(){
         double costo= 0.0;
-
+        if (cajaAutomatica) {
+            costo = tarifaBase + tarifaAdicional;
+        }
         return costo;
     }
     

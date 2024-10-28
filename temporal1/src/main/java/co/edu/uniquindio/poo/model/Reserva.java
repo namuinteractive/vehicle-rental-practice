@@ -6,7 +6,7 @@ public class Reserva {
     private double costo;
 
 
-    public Reserva(String codigo, double costo) {
+    public Reserva(String codigo, double costo, Vehiculo vehiculo, Cliente cliente) {
         this.codigo = codigo;
         this.costo = costo;
     }
@@ -23,5 +23,6 @@ public class Reserva {
         this.costo = costo;
     }
 
+    
     
 }
