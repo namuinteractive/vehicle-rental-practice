@@ -152,6 +152,73 @@ public class Empresa {
         return mensaje;
     }
 
+    // CRUD Reserva
+
+    /**
+     * Añadir Reserva
+     * @param reserva
+     * @return
+     * @throws IllegalArgumentException
+     */
+    public String añadirReserva(Reserva reserva) throws IllegalArgumentException {
+        String mensaje = "Se añadió correctamente";
+        if (reserva == null) {
+            throw new IllegalArgumentException("No se aceptan objetos nulos");
+        }
+        listaReservas.add(reserva);
+        return mensaje;
+    }
+
+    /**
+     * Eliminar Reserva
+     * @param reserva
+     * @return
+     * @throws IllegalArgumentException
+     */
+    public String eliminarReserva(Reserva reserva) throws IllegalArgumentException {
+        String mensaje = "Se eliminó correctamente";
+        if (reserva == null) {
+            throw new IllegalArgumentException("No se aceptan objetos nulos");
+        }
+        if (!listaReservas.contains(reserva)){
+            mensaje = "No se encuentra en la lista";
+        }
+        listaReservas.remove(reserva);
+        return mensaje;
+    }
+
+    /**
+     * Buscar Reserva por ID
+     * @param id
+     * @return
+     */
+    public Reserva buscarReserva(int id){
+        return listaReservas.stream().filter(reservaaux -> reservaaux.getId() == id).findFirst().orElse(null);
+    }
+
+    /**
+     * Editar reserva, borra uno y añade el nuevo
+     * @param reserva
+     * @param nuevaReserva
+     * @return
+     * @throws IllegalArgumentException
+     */
+    public String editarReserva(Reserva reserva, Reserva nuevaReserva) throws IllegalArgumentException{
+        String mensaje = "editado correctamente";
+
+        if (reserva == null || nuevaReserva == null) {
+            throw new IllegalArgumentException("No se aceptan objetos nulos");
+        }
+
+        if (!listaReservas.contains(reserva)){
+            mensaje = "No se encuentra en la lista";
+        }
+
+        listaReservas.remove(reserva);
+        listaReservas.add(nuevaReserva);
+        return mensaje;
+    }
+
     private static Empresa instance;
 
     public static Empresa getEmpresa() {

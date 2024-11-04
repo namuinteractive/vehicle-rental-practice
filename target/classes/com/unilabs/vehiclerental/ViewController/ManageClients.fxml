@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unilabs.vehiclerental.ViewController.ManageClientsController">
+    <children>
+        <Label text="Gestión de Clientes" />
+
+        <HBox spacing="10">
+            <Label text="Nombre: " />
+            <TextField fx:id="txtNombre" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Cédula: " />
+            <TextField fx:id="txtCedula" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Button fx:id="btnAgregar" text="Agregar" onAction="#onAgregar" />
+            <Button fx:id="btnEliminar" text="Eliminar" onAction="#onEliminar" />
+            <Button fx:id="btnEditar" text="Editar" onAction="#onEditar" />
+        </HBox>
+
+        <ListView fx:id="listViewClientes" />
+
+        <Button fx:id="btnVolver" text="Volver" onAction="#onVolver" />
+    </children>
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+</VBox>

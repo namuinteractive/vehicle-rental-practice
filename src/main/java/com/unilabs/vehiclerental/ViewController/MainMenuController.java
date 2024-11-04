@@ -20,6 +20,9 @@ public class MainMenuController {
     private Button btnManageClients;
 
     @FXML
+    private Button btnManageReservations;
+
+    @FXML
     private Button btnExit;
 
     // Métodos de manejo de eventos
@@ -59,6 +62,20 @@ public class MainMenuController {
             Stage stage = (Stage) btnManageClients.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle("Gestionar Clientes");
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void onManageReservations(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ManageReservations.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) btnManageReservations.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Gestionar Reservas");
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

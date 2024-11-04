@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unilabs.vehiclerental.ViewController.ManageReservationsController">
+    <children>
+        <Label text="Gestión de Reservas" />
+
+        <HBox spacing="10">
+            <Label text="Cliente: " />
+            <ComboBox fx:id="comboBoxClientes" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Vehículo: " />
+            <ComboBox fx:id="comboBoxVehiculos" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Fecha de Inicio: " />
+            <DatePicker fx:id="datePickerInicio" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Fecha de Fin: " />
+            <DatePicker fx:id="datePickerFin" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Button fx:id="btnAgregar" text="Agregar" onAction="#onAgregar" />
+            <Button fx:id="btnEliminar" text="Eliminar" onAction="#onEliminar" />
+            <Button fx:id="btnEditar" text="Editar" onAction="#onEditar" />
+        </HBox>
+
+        <ListView fx:id="listViewReservas" />
+
+        <Button fx:id="btnVolver" text="Volver" onAction="#onVolver" />
+    </children>
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+</VBox>

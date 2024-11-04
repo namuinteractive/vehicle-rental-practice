@@ -11,14 +11,17 @@
     <Label layoutX="20.0" layoutY="60.0" text="Tipo de Vehículo:" />
     <ComboBox fx:id="comboBoxTipoVehiculo" layoutX="150.0" layoutY="60.0" />
 
-    <Label layoutX="20.0" layoutY="100.0" text="Días de Alquiler:" />
-    <TextField fx:id="txtDias" layoutX="150.0" layoutY="100.0" />
+    <Label layoutX="20.0" layoutY="100.0" text="Cliente: " />
+    <ComboBox fx:id="comboBoxClientes" layoutX="150.0" layoutY="100.0" />
 
-    <Button layoutX="20.0" layoutY="140.0" onAction="#onCalcularCosto" text="Calcular Costo" />
-    <Label fx:id="lblCostoTotal" layoutX="150.0" layoutY="140.0" text="Costo Total: $0.00" />
+    <Label layoutX="20.0" layoutY="140.0" text="Días de Alquiler:" />
+    <TextField fx:id="txtDias" layoutX="150.0" layoutY="140.0" />
 
-    <Button layoutX="20.0" layoutY="180.0" onAction="#onRent" text="Rentar" />
-    <Button layoutX="150.0" layoutY="180.0" onAction="#onVolver" text="Volver" />
+    <Button layoutX="20.0" layoutY="180.0" onAction="#onCalcularCosto" text="Calcular Costo" />
+    <Label fx:id="lblCostoTotal" layoutX="150.0" layoutY="180.0" text="Costo Total: $0.00" />
+
+    <Button layoutX="20.0" layoutY="220.0" onAction="#onRent" text="Rentar" />
+    <Button layoutX="150.0" layoutY="220.0" onAction="#onVolver" text="Volver" />
 
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />

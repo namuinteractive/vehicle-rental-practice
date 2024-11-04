@@ -9,6 +9,7 @@
         <Button fx:id="btnRentVehicle" text="Rentar Vehículo" onAction="#onRentVehicle" />
         <Button fx:id="btnManageVehicles" text="Gestionar Vehículos" onAction="#onManageVehicles" />
         <Button fx:id="btnManageClients" text="Gestionar Clientes" onAction="#onManageClients" />
+        <Button fx:id="btnManageReservations" text="Gestionar Reservas" onAction="#onManageReservations" />
         <Button fx:id="btnExit" text="Salir" onAction="#onExit" />
     </children>
     <padding>
