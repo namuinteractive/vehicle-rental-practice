@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="232.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unilabs.vehiclerental.ViewController.RentVehicleController">
+    <Label layoutX="20.0" layoutY="20.0" text="Matrícula:" />
+    <TextField fx:id="txtMatricula" layoutX="150.0" layoutY="20.0" />
+
+    <Label layoutX="20.0" layoutY="60.0" text="Tipo de Vehículo:" />
+    <ComboBox fx:id="comboBoxTipoVehiculo" layoutX="150.0" layoutY="60.0" />
+
+    <Label layoutX="20.0" layoutY="100.0" text="Días de Alquiler:" />
+    <TextField fx:id="txtDias" layoutX="150.0" layoutY="100.0" />
+
+    <Button layoutX="20.0" layoutY="140.0" onAction="#onCalcularCosto" text="Calcular Costo" />
+    <Label fx:id="lblCostoTotal" layoutX="150.0" layoutY="140.0" text="Costo Total: $0.00" />
+
+    <Button layoutX="20.0" layoutY="180.0" onAction="#onRent" text="Rentar" />
+    <Button layoutX="150.0" layoutY="180.0" onAction="#onVolver" text="Volver" />
+
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+</Pane>

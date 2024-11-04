@@ -1,30 +1,19 @@
 package com.unilabs.vehiclerental.Model;
 
-public class Moto extends Vehiculo{
+public class Moto extends Vehiculo {
+    private boolean esAutomatica;
 
-    private boolean cajaAutomatica;
-    private double tarifaBase;
-    private double tarifaAdicional;
-
-    public Moto(String matricula, String marca, String modelo, int añoFabricacion, boolean cajaAutomatica) {
-        super(matricula, marca, modelo, añoFabricacion);
-        this.cajaAutomatica = cajaAutomatica;
+    public Moto(String matricula, String marca, String modelo, int anoFabricacion, boolean esAutomatica) {
+        super(matricula, marca, modelo, anoFabricacion);
+        this.esAutomatica = esAutomatica;
     }
 
-    public boolean isCajaAutomatica() {
-        return cajaAutomatica;
-    }
-
-    public void setCajaAutomatica(boolean cajaAutomatica) {
-        this.cajaAutomatica = cajaAutomatica;
-    }
-
-    public double calcularCostoReserva(){
-        double costo= 0.0;
-        if (cajaAutomatica) {
-            costo = tarifaBase + tarifaAdicional;
+    @Override
+    public double calcularCostoReserva(int dias) {
+        double tarifaBase = 30; // Tarifa base por día
+        if (esAutomatica) {
+            tarifaBase += 10; // Tarifa adicional si es automática
         }
-        return costo;
+        return tarifaBase * dias;
     }
-    
 }

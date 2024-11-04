@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.unilabs.vehiclerental.ViewController.MainMenuController">
+    <children>
+        <Button fx:id="btnRentVehicle" text="Rentar Vehículo" onAction="#onRentVehicle" />
+        <Button fx:id="btnManageVehicles" text="Gestionar Vehículos" onAction="#onManageVehicles" />
+        <Button fx:id="btnManageClients" text="Gestionar Clientes" onAction="#onManageClients" />
+        <Button fx:id="btnExit" text="Salir" onAction="#onExit" />
+    </children>
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+</VBox>

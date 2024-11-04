@@ -18,11 +18,7 @@ public class Empresa {
     }
 
 
-
-    
-
-
-    //CRUD Cliente 
+    // CRUD Cliente
 
     /**
      * Añadir Cliente
@@ -53,6 +49,7 @@ public class Empresa {
         if (!listaClientes.contains(cliente)){
             mensaje = "No se encuentra en la lista";
         }
+        listaClientes.remove(cliente);
         return mensaje;
     }
 
@@ -88,76 +85,10 @@ public class Empresa {
         return mensaje;
     }
 
-    //CRUD Reserva
+    // CRUD Vehículo
 
     /**
-     * Añadir reserva
-     * @param reserva
-     * @return
-     * @throws IllegalArgumentException
-     */
-    public String añadirReserva(Reserva reserva) throws IllegalArgumentException {
-        String mensaje = "Se añadió correctamente";
-        if (reserva == null) {
-            throw new IllegalArgumentException("No se aceptan objetos nulos");
-        }
-        listaReservas.add(reserva);
-        return mensaje;
-    }
-
-    /**
-     * Eliminar reserva
-     * @param reserva
-     * @return
-     * @throws IllegalArgumentException
-     */
-    public String eliminarReserva(Reserva reserva) throws IllegalArgumentException {
-        String mensaje = "Se eliminó correctamente";
-        if (reserva == null) {
-            throw new IllegalArgumentException("No se aceptan objetos nulos");
-        }
-        if (!listaReservas.contains(reserva)){
-            mensaje = "No se encuentra en la lista";
-        }
-        return mensaje;
-    }
-
-    /**
-     * Busca una reserva por su codigo
-     * @param codigo
-     * @return
-     */
-    public Reserva buscarReserva(String codigo){
-        return listaReservas.stream().filter(reservaux -> reservaux.getCodigo().equals(codigo)).findFirst().orElse(null);
-    }
-
-    /**
-     * Edita una reserva, la borra y añade una con los datos nuevos
-     * @param reserva
-     * @param nuevaReserva
-     * @return
-     * @throws IllegalArgumentException
-     */
-    public String editarReserva(Reserva reserva, Reserva nuevaReserva) throws IllegalArgumentException{
-        String mensaje = "editado correctamente";
-
-        if (reserva == null || nuevaReserva == null) {
-            throw new IllegalArgumentException("No se aceptan objetos nulos");
-        }
-
-        if (!listaReservas.contains(reserva)){
-            mensaje = "No se encuentra en la lista";
-        }
-
-        listaReservas.remove(reserva);
-        listaReservas.add(nuevaReserva);
-        return mensaje;
-    }
-
-    //CRUD Vehiculo 
-    
-    /**
-     * Añade un vehiculo
+     * Añadir Vehículo
      * @param vehiculo
      * @return
      * @throws IllegalArgumentException
@@ -172,7 +103,7 @@ public class Empresa {
     }
 
     /**
-     * Elimina un Vehiculo de la lista
+     * Eliminar Vehículo
      * @param vehiculo
      * @return
      * @throws IllegalArgumentException
@@ -185,20 +116,21 @@ public class Empresa {
         if (!listaVehiculos.contains(vehiculo)){
             mensaje = "No se encuentra en la lista";
         }
+        listaVehiculos.remove(vehiculo);
         return mensaje;
     }
 
     /**
-     * Busca un vehiculo por su matricula 
+     * Buscar Vehículo por matrícula
      * @param matricula
      * @return
      */
     public Vehiculo buscarVehiculo(String matricula){
-        return listaVehiculos.stream().filter(caraux -> caraux.getMatricula().equals(matricula)).findFirst().orElse(null);
+        return listaVehiculos.stream().filter(vehiculoaux -> vehiculoaux.getMatricula().equals(matricula)).findFirst().orElse(null);
     }
 
     /**
-     * Edita un vehiculo, lo borra y añade uno con datos nuevos
+     * Editar vehículo, borra uno y añade el nuevo
      * @param vehiculo
      * @param nuevoVehiculo
      * @return
@@ -220,26 +152,13 @@ public class Empresa {
         return mensaje;
     }
 
+    private static Empresa instance;
 
-//Metodo Reserva 
-
-    /**
-     * Build reserva
-     * @param clienteReserva
-     * @param vehiculoReserva
-     * @param dias
-     * @return
-     */
-    public String hacerReserva(Cliente clienteReserva, Vehiculo vehiculoReserva, int dias){
-        String mensaje = "Reserva exitosa";
-
-
-        
-        return mensaje;
-    }
-
-    public void buildReserva(String codigo){
-
+    public static Empresa getEmpresa() {
+        if (instance == null) {
+            instance = new Empresa("Empresa de Alquiler"); // Nombre de la empresa
+        }
+        return instance;
     }
 
     //Setters & Getters

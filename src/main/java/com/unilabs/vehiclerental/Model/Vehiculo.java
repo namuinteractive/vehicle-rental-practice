@@ -1,61 +1,34 @@
 package com.unilabs.vehiclerental.Model;
 
 public abstract class Vehiculo {
-
     private String matricula;
     private String marca;
     private String modelo;
-    private int añoFabricacion;
+    private int anoFabricacion;
 
-    
-    public Vehiculo(String matricula, String marca, String modelo, int añoFabricacion) {
+    public Vehiculo(String matricula, String marca, String modelo, int anoFabricacion) {
         this.matricula = matricula;
         this.marca = marca;
         this.modelo = modelo;
-        this.añoFabricacion = añoFabricacion;
+        this.anoFabricacion = anoFabricacion;
     }
-
-    public abstract double calcularCostoReserva();
-
 
     public String getMatricula() {
         return matricula;
     }
 
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-
     public String getMarca() {
         return marca;
     }
-
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
 
     public String getModelo() {
         return modelo;
     }
 
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public int getAnoFabricacion() {
+        return anoFabricacion;
     }
 
-
-    public int getAñoFabricacion() {
-        return añoFabricacion;
-    }
-
-
-    public void setAñoFabricacion(int añoFabricacion) {
-        this.añoFabricacion = añoFabricacion;
-    }
-
-    
+    // Método abstracto para calcular el costo de la reserva
+    public abstract double calcularCostoReserva(int dias);
 }

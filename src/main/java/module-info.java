@@ -10,7 +10,11 @@ module com.unilabs.vehiclerental {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires javafx.graphics;
 
+    // ¡Nuevo!
+    opens com.unilabs.vehiclerental.ViewController to javafx.fxml;
     opens com.unilabs.vehiclerental to javafx.fxml;
     exports com.unilabs.vehiclerental;
+    exports com.unilabs.vehiclerental.ViewController to javafx.fxml;
 }
